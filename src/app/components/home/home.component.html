@@ -1,0 +1,15 @@
+<div class="movie-wrapper">
+  <div class="search">
+      <input type="text" placeholder="Film arayın..." (keyup)="GetMovies(f.value)" #f>
+      <i class="fa fa-search" aria-hidden="true"></i>
+  </div>
+  <div class="clearfix"></div>
+  <div class="thumbnail" *ngIf="movies?.Title">
+      <a [routerLink]="['/detail', movies.imdbID]">
+          <img [src]="movies.Poster" *ngIf="movies?.Poster.length > 4">
+          <h1>{{movies.Title}}</h1>
+          <h2>{{movies.Genre}}</h2>
+          <div class="rate">{{movies.imdbRating}}</div>
+      </a>
+  </div>
+</div>
